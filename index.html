@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Website Turnamen</title>
+    <style>
+        .body {
+            transition: transform 0.2s;
+        }
+
+        .input {
+            background-color: #0b0b0bb4;
+        }
+
+        .input:hover {
+            background-color: #151515;
+
+        }
+
+        .tombolRegister, .tombolLogin {
+            background-color: #11181e;
+        }
+
+        .login {
+            color: #6a5959;
+        }
+
+        .login:hover {
+            color: #9f8686;
+        }
+
+        input[type="checkbox"] {
+            accent-color: #6a5959;
+        }
+
+        .textCekbok {
+            font-size: 0.9em;
+        }
+
+        .container {
+            border: 4px solid #ffffff79;
+        }
+
+        .tombol:hover {
+            background-color: #1c2731;
+        }
+
+        @media (min-width: 647px) and (max-width: 800px) {
+            .fotoTengah {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    </style>
+</head>
+
+<body class="overflow-auto">
+    <div class="fixed inset-0">
+        <img class="bg w-full object-cover h-full scale-110 blur-lg" src="galaxy.jpg">
+        <div class="absolute inset-0 bg-black/50"></div>
+    </div>
+    <div class="relative z-10 flex items-center justify-center h-screen">
+        <div
+            class="container
+    w-[100%] sm:w-[80%]
+    md:h-[40%] md:min-h-[570px] md:max-h-[570px]
+    lg:h-[60%] lg:max-h-[600px]
+    xl:h-[70%] xl:max-h-[400px]  
+    md:w-[80%] lg:w-[80%] flex max-w-4xl flex-col md:flex-row justify-start p-5 rounded-3xl bg-black text-white">
+
+
+            <img class="fotoTengah lg:w-[22em] sm:w-[20em] md:w-[21em] opacity-80 h-auto" src="abys.jpg">
+            <div class="flex-1">
+            <div id="login-form" class="flex flex-col items-start p-5 justify-start">
+
+
+                <h1 class="text-3xl font-bold mb-2">Login Account</h1>
+                <p class="text-gray-500">Don't have an account? <a href="#"
+                        class="login underline underline-offset-4">Register</a></p>
+                        
+                <input type="text" placeholder="Username"
+                    class="input focus:outline-none mt-[4em] p-3 w-full rounded-[0.3em] text-white">
+                    <!-- Password-->
+                    <div class="w-full relative">
+                <input type="password" placeholder="Password"
+                    class="pw input focus:outline-none mt-5 p-3 w-full rounded-[0.3em] text-white">
+                    <i data-lucide="eye" id="toggle-pass-login"
+                        class="mata absolute right-3 top-1/2 -translate-y-[-2%] w-5 h-5 cursor-pointer text-gray-400"></i>
+                        <i data-lucide="eye-off"
+                            class="mata-off absolute right-3 top-1/2 -translate-y-[-2%] w-5 h-5 cursor-pointer text-gray-400 hidden"></i>   
+                    </div>
+                    <!-- Checkbox -->
+                <label class="flex mt-4 items-center gap-2">
+                    <input type="checkbox">
+                    <p class="textCekbok text-white">I agree to the Terms & Conditions</p>
+                </label>
+                <button class="tombolLogin w-full mt-4 h-[3em] rounded-lg">Login Account</button>
+            </div>
+            <!-- register -->
+            <div id="register-form" class="flex hidden flex-col items-start p-5 justify-start">
+            
+                <h1 class="text-3xl font-bold">Create An Account</h1>
+                <p class="text-gray-500">Already have an account? <a href="#" class="login underline underline-offset-4">Login</a>
+                </p>
+                <div class="flex gap-2">
+                    <input type="text" placeholder="First Name"
+                        class="input focus:outline-none mt-5 p-3 w-full rounded-[0.3em] text-white">
+                    <input type="text" placeholder="Last Name"
+                        class="input focus:outline-none mt-5 p-3 w-full rounded-[0.3em] text-white">
+                </div>
+                <input type="text" placeholder="Username"
+                    class="input focus:outline-none mt-5 p-3 w-full rounded-[0.3em] text-white">
+                <div class="w-full relative">
+                    <!-- Password -->
+                    <input type="password" placeholder="Password"
+                        class="pw input focus:outline-none mt-5 p-3 w-full rounded-[0.3em] text-white">
+                    <i data-lucide="eye" id="toggle-pass-login"
+                        class="mata absolute right-3 top-1/2 -translate-y-[-2%] w-5 h-5 cursor-pointer text-gray-400"></i>
+                    <i data-lucide="eye-off" class="mata-off absolute right-3 top-1/2 -translate-y-[-2%] w-5 h-5 cursor-pointer text-gray-400 hidden"></i>
+                </div>
+                <div class="relative w-full">
+                    <select id="role"
+                        class="input appearance-none focus:outline-none mt-5 p-3 w-full rounded-[0.3em] text-gray-400">
+                        <option value="" disabled selected>Pilih Hak Akses</option>
+                        <option value="admin">Admin</option>
+                        <option value="user">User</option>
+                    </select>
+                    <i data-lucide="chevron-down"
+                        class="absolute right-3 top-1/2 -translate-y-[-2%] text-gray-400 w-4 h-4 pointer-events-none"></i>
+                </div>
+                <label class="flex mt-4 items-center gap-2">
+                    <input type="checkbox">
+                    <p class="textCekbok text-white">I agree to the Terms & Conditions</p>
+                </label>
+                <button class="tombolRegister w-full mt-4 h-[3em] rounded-lg">Create Account</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // icon
+        lucide.createIcons();
+        // toggle
+        let warna = document.querySelector('#role');
+
+        warna.addEventListener('change', () => {
+            warna.classList.replace('text-gray-400', 'text-white');
+        });
+
+        document.querySelectorAll('.login').forEach(gontaGanti => {
+            gontaGanti.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                    document.getElementById('login-form').classList.toggle('hidden');
+                    document.getElementById('register-form').classList.toggle('hidden');
+                });
+            });
+        // validasi
+        let input = document.querySelector('.input');
+
+        document.querySelector('.tombolRegister').addEventListener('click', function (e) {
+            e.preventDefault();
+            if (!input.value) {
+                alert('Jangan Lupa Diisi Ya!');
+            }
+        });
+        document.querySelector('.tombolLogin').addEventListener('click', function (e) {
+            e.preventDefault();
+            if (!input.value) {
+                alert('Jangan Lupa Diisi Ya!');
+            }
+        });
+        // show hide password
+        const pw = document.querySelectorAll('.pw');
+        const mata = document.querySelectorAll('.mata');
+        const mataOff = document.querySelectorAll('.mata-off');
+
+        pw.forEach((pw, i) => {
+            const mataKu = mata[i];
+            const mataKuOff = mataOff[i];
+
+            mataKu.addEventListener('click', () => {
+            pw.type = 'text';
+            mataKu.classList.add('hidden');
+            mataKuOff.classList.remove('hidden');
+            });
+
+            mataKuOff.addEventListener('click', () => {
+            pw.type = 'password';
+            mataKuOff.classList.add('hidden');
+            mataKu.classList.remove('hidden');
+        });
+        });
+    </script>
+</body>
+
+</html> 
