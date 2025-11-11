@@ -160,21 +160,27 @@
                     document.getElementById('register-form').classList.toggle('hidden');
                 });
             });
-        // validasi
-        let input = document.querySelector('.input');
+        // validasi Login
+            document.querySelector('.tombolLogin').addEventListener('click', function (e) {
+                e.preventDefault();
+                const inputs = document.querySelectorAll('#login-form .input');
+                let kosong = false;
+                inputs.forEach(input => {
+                    if (!input.value) kosong = true;
+                });
+                if (kosong) alert('Jangan Lupa Diisi Ya!');
+            });
 
-        document.querySelector('.tombolRegister').addEventListener('click', function (e) {
-            e.preventDefault();
-            if (!input.value) {
-                alert('Jangan Lupa Diisi Ya!');
-            }
-        });
-        document.querySelector('.tombolLogin').addEventListener('click', function (e) {
-            e.preventDefault();
-            if (!input.value) {
-                alert('Jangan Lupa Diisi Ya!');
-            }
-        });
+            // validasi Register
+            document.querySelector('.tombolRegister').addEventListener('click', function (e) {
+                e.preventDefault();
+                const inputs = document.querySelectorAll('#register-form .input');
+                let kosong = false;
+                inputs.forEach(input => {
+                    if (!input.value) kosong = true;
+                });
+                if (kosong) alert('Jangan Lupa Diisi Ya!');
+            });
         // show hide password
         const pw = document.querySelectorAll('.pw');
         const mata = document.querySelectorAll('.mata');
